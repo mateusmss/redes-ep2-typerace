@@ -33,12 +33,15 @@ public class java {
     }
     //Métodos de comparação
     
-    /*public void compararPalavras(String entrada, String respostaCorreta){
-        if(correto.equals(entrada)){
-            Set.add(entrada);
+    //verificar se a resposta está correta ou errada
+    public boolean compararPalavras(String entrada, String respostaCorreta){
+        if(getPalavras().contains(respostaCorreta){
+            setRespostaCorreta();
+            return true;
         }else{
             setRespostaErrada();
+            return false;
         }
-    }*/
+    }
     
 }
