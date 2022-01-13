@@ -15,6 +15,7 @@ public class ClientMain {
 
     public void init(String idCliente) {
         System.out.println("Iniciando cliente: " + idCliente);
+        client.connect();
         // TODO: Implementar
     }
 

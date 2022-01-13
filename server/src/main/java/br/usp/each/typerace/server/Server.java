@@ -38,6 +38,6 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onStart() {
-        // TODO: Implementar
+        System.out.println("Servudor está iniciando");
     }
 }
