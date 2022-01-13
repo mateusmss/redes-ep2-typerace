@@ -18,7 +18,9 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
-        // TODO: Implementar
+        if(connections.containsKey(playerId(conn))){
+            
+        }
     }
 
     @Override

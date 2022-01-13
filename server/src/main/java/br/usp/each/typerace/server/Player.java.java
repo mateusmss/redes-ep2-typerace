@@ -1,5 +1,5 @@
 
-package Player;
+package br.usp.each.typerace.server;
 
 public class java {
     private Set<String> 
@@ -26,6 +26,6 @@ public class java {
     }
     public int getRespostaErrada(){
         return this.errado;
-            
     }
+    
 }
