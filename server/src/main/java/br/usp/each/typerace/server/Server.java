@@ -18,14 +18,13 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
-        if(connections.containsKey(playerId(conn))){
-            
-        }
+        System.out.println("Iniciando conexão");
+        
     }
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-        // TODO: Implementar
+        
     }
 
     @Override
@@ -35,11 +34,13 @@ public class Server extends WebSocketServer {
 
     @Override
     public void onError(WebSocket conn, Exception ex) {
-        // TODO: Implementar
+        if(conn != null){
+            System.out.println("Problema de conexão");
+        }
     }
 
     @Override
     public void onStart() {
-        System.out.println("Servudor está iniciando");
+        System.out.println("Servidor está iniciando");
     }
 }
