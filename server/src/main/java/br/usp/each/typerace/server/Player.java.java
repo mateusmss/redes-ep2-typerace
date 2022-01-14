@@ -28,9 +28,13 @@ public class java {
     public int getRespostaErrada(){
         return this.errado;
     }
-    public Set<String> getPalavras(){
-        return this.palavras;
+    public int getPalavras(){
+        return this.listaPalavras;
     }
+    public void incrementarListaPalavras(){
+        this.listaPalavras++;
+    }
+    
     //Métodos de comparação
     
     //verificar se a resposta está correta ou errada
@@ -40,7 +44,7 @@ public class java {
         }else{
             setRespostaErrada();
         }
-        listaPalavras++;
+        incrementarListaPalavras();
     }
     
 }
