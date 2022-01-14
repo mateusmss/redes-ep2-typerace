@@ -2,15 +2,15 @@
 package br.usp.each.typerace.server;
 import java.util.Set;
 public class java {
-    private Set<String> palavras;
+    private int listaPalavras;
     private String playerID;
     private int correto,errado;
     
-    public Player(String playerID, int errado, int correto, Set<String>palavras){
+    public Player(String playerID, int errado, int correto){
         this.playerID = playerID;
         this.errado = errado;
         this.correto = correto;
-        this.palavras = palavras;
+        this.listaPalavras = 0;
     }
     //Geters e seters
     public String getPlayerID(){
@@ -35,13 +35,12 @@ public class java {
     
     //verificar se a resposta está correta ou errada
     public boolean compararPalavras(String entrada, String respostaCorreta){
-        if(getPalavras().contains(respostaCorreta){
+        if(correto.equals(entrada)){
             setRespostaCorreta();
-            return true;
         }else{
             setRespostaErrada();
-            return false;
         }
+        listaPalavras++;
     }
     
 }
