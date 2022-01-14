@@ -16,26 +16,36 @@ public class ClientMain {
     public void init(String idCliente) {
         System.out.println("Iniciando cliente: " + idCliente);
         client.connect();
-        // TODO: Implementar
     }
 
     public static void main(String[] args) {
-        /*
-           FIXME: Remover essas strings fixas
-           Como podemos fazer para que o cliente receba um parÃ¢metro indicando a qual servidor
-           ele deve se conectar e o seu ID?
-        */
-        String removeMe = "ws://localhost:8080";
-        String removeMe2 = "idCliente";
+        BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+        WebSocketClient client;
 
-        try {
-            WebSocketClient client = new Client(new URI(removeMe));
+        System.out.println("Servidor localhost:8080 ");
+        String server = entrada.readLine();
 
+        if (server.isEmpty())
+            server = "ws://localhost:8080";
+        boolean condição = true;
+        while(condição) {
+            System.out.println("Digite seu nome de usuárioo: ");
+            String nome = input.readLine();
+            String conexao = server;
+
+            if (nome.isEmpty()) {
+                System.out.println("Digite um nome válido!");
+                continue;
+            }
+
+            conexao += "/playerId=" + nome;
+
+            client = new Client(new URI(conexao));
             ClientMain main = new ClientMain(client);
 
-            main.init(removeMe2);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+            main.init(nome);
+
     }
+    
+    
 }
