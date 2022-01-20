@@ -1,7 +1,7 @@
 package br.usp.each.typerace.server;
 
 import org.java_websocket.server.WebSocketServer;
-
+import java.util.Scanner;
 import java.util.HashMap;
 
 public class ServerMain {
@@ -18,11 +18,21 @@ public class ServerMain {
     }
 
     public static void main(String[] args) {
-        WebSocketServer server = new Server(8080, new HashMap<>());
-        
+        Scanner entrada = new Scanner(System.in);
+        int entradaPortaServidor;
+        System.out.println("Servidor por padrão 8080 ");
+        System.out.println("Aperte 0 para não escolher nenhuma porta ou digite uma porta de preferencia");
+        entradaPortaServidor = entrada.nextInt();
+        if(entradaPortaServidor == 0){
+            entradaPortaServidor = 8080;
+        }
+        WebSocketServer server = new Server(entradaPortaServidor, new HashMap<>());
         ServerMain main = new ServerMain(server);
-
         main.init();
+        System.out.println("\nTudo pronto.");
+        
+        
+        
     }
 
 }
