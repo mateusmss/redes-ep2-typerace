@@ -1,6 +1,6 @@
 
 package br.usp.each.typerace.server;
-
+import java.util.*;
 public class typerace {
     private int maxPlacar, tamanhoLista, quantPlayer;
     private double timeInicial, timeFinal;
@@ -90,6 +90,7 @@ public class typerace {
 
         return placar;
     }
+        
 
     public Set<String> getPlayerPalavras(String playerID) {
         return placar.get(playerID).getPalavras();
